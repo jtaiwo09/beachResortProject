@@ -11,6 +11,9 @@ export default class Navbar extends Component {
     handleToggle =()=> {
         this.setState({isOpen: !this.state.isOpen})
     }
+    handleClick =()=>{
+        this.setState({isOpen: !this.state.isOpen})
+    }
     render() {
         return (
             <nav className='navbar'>
@@ -25,10 +28,10 @@ export default class Navbar extends Component {
                     </div>
                     <ul className={this.state.isOpen ? 'nav-links show-nav': 'nav-links'}>
                         <li>
-                            <Link to='/' className=''>Home</Link>
+                            <Link to='/' onClick={this.handleClick}>Home</Link>
                         </li>
                         <li>
-                            <Link to='/rooms' className=''>Rooms</Link>
+                            <Link to='/rooms' onClick={this.handleClick}>Rooms</Link>
                         </li>
                     </ul>
                 </div>
